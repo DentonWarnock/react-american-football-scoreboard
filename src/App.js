@@ -5,14 +5,26 @@ import BottomRow from "./BottomRow";
 
 function App() {
   //TODO: STEP 2 - Establish your applictaion's state with some useState hooks.  You'll need one for the home score and another for the away score.
-  const [scoreHome, setHome] = useState(0); //home
-  const [scoreAway, setAway] = useState(0); //away
-
+  const [scoreHome, setHome] = useState(0); 
+  const [scoreAway, setAway] = useState(0); 
+  const [quarter, setQuarter] = useState(1); 
+  
   const tdHome = () => setHome(scoreHome + 7);
   const fgHome = () => setHome(scoreHome + 3);
 
   const tdAway = () => setAway(scoreAway + 7);
   const fgAway = () => setAway(scoreAway + 3);
+
+  const nextQuarter = () => setQuarter(quarter < 5 ? quarter + 1 : 1);
+  
+  function resetBoard() {
+    setHome(0);
+    setAway(0);
+    setQuarter(1);
+  }
+
+  
+  
 
   return (
     <div className="container">
@@ -42,6 +54,10 @@ function App() {
         <div className="awayButtons">
           <button onClick={tdAway} className="awayButtons__touchdown">Away Touchdown</button>
           <button onClick={fgAway} className="awayButtons__fieldGoal">Away Field Goal</button>
+        </div>
+        <div className="otherButtons">
+          <button onClick={resetBoard} className="resetBtn">Reset Board</button>
+          <button onClick={nextQuarter} className="quarterBtn">Change Quarter</button>
         </div>
       </section>
     </div>
