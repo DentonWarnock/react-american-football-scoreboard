@@ -15,15 +15,13 @@ function App() {
   const tdAway = () => setAway(scoreAway + 7);
   const fgAway = () => setAway(scoreAway + 3);
 
-  const nextQuarter = () => setQuarter(quarter < 5 ? quarter + 1 : 1);
+  const nextQuarter = () => setQuarter(quarter < 4 ? quarter + 1 : 1);
   
   function resetBoard() {
     setHome(0);
     setAway(0);
     setQuarter(1);
-  }
-
-  
+  } 
   
 
   return (
@@ -43,7 +41,7 @@ function App() {
             <div className="away__score">{scoreAway}</div>
           </div>
         </div>
-        <BottomRow />
+        <BottomRow quarter={quarter}/>
       </section>
       <section className="buttons">
         <div className="homeButtons">

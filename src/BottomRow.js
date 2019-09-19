@@ -3,7 +3,6 @@ import "./App.css";
 import App from "./App.js";
 
 const BottomRow = (props) => {
-  const { quarter } = props;
   return (
     <div className="bottomRow">
       <div className="down">
@@ -20,7 +19,7 @@ const BottomRow = (props) => {
       </div>
       <div className="quarter">
         <h3 className="quarter__title">Quarter</h3>
-        <div className="quarter__value">{quarter}</div>
+        <div className="quarter__value">{props.quarter}</div>
       </div>
     </div>
   );
