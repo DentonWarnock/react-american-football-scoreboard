@@ -22,8 +22,7 @@ function App() {
     setHome(0);
     setAway(0);
     setQuarter(1);
-  } 
-  
+  }  
 
   return (
     <div className="container">
@@ -43,11 +42,11 @@ function App() {
           </div>
         </div>
         <BottomRow quarter={quarter}/>
-        {/* <Buttons tdHome={tdHome} fgHome={fgHome} tdAway={tdAway} fgAway={fgAway} nextQuarter={nextQuarter} resetBoard={resetBoard} />>         */}
+        <Buttons tdHome={tdHome} fgHome={fgHome} tdAway={tdAway} fgAway={fgAway} nextQuarter={nextQuarter} resetBoard={resetBoard}/>    
       </section>
-      <section className="buttons">
+      
+      {/* <section className="buttons">
         <div className="homeButtons">
-          {/* TODO STEP 4 - Now we need to attach our state setter functions to click listeners. */}
           <button onClick={tdHome} className="homeButtons__touchdown">Home Touchdown</button>
           <button onClick={fgHome} className="homeButtons__fieldGoal">Home Field Goal</button>
         </div>
@@ -59,7 +58,7 @@ function App() {
           <button onClick={resetBoard} className="resetBtn">Reset Board</button>
           <button onClick={nextQuarter} className="quarterBtn">Change Quarter</button>
         </div>
-      </section>
+      </section>  */}
     </div>
   );
 }
